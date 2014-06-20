@@ -183,6 +183,12 @@
 #define SYNTH_PICO_MODULE
 #endif
 
+#if defined(MOZ_SYNTH_SAPI)
+#define SYNTH_SAPI_MODULE MODULE(synthsapi)
+#else
+#define SYNTH_SAPI_MODULE
+#endif
+
 #define XUL_MODULES                          \
     MODULE(nsUConvModule)                    \
     MODULE(nsI18nModule)                     \
@@ -244,6 +250,7 @@
     PEERCONNECTION_MODULE                    \
     GIO_MODULE                               \
     SYNTH_PICO_MODULE                        \
+	SYNTH_SAPI_MODULE                        \
     MODULE(DiskSpaceWatcherModule)           \
     /* end of list */
 
